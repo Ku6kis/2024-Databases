@@ -1,1 +1,6 @@
 Explain the difference between INNER JOIN, LEFT (OUTER) JOIN and RIGHT (OUTER) JOIN.
+
+INNER JOIN ottaa mukaan ainoastaan ne sarakkeet, joilta löytyy sellainen arvo, jolla on ehtoa vastaavat vastinparit.
+Kun taas OUTER JOIN ottaa mukaan myös NULL arvot:
+LEFT JOIN: palauttaa kaikki selectillä haetut tiedot vasemmassa pöydässä
+RIGHT JOIN: palauttaa kaikki selectillä haetut tiedot oikeassa pöydässä

@@ -12,3 +12,16 @@
 -- 8. The Talisman 9.03
 -- 9. The Man Who Would Be King 8.28
 -- 10. When the Wild Wind Blows 10.59
+
+INSERT INTO album (id, name, year, artist_id) VALUES (7, "The Final Frontier", 2010, 1);
+INSERT INTO track (name, length, track_number, album_id) VALUES
+    ('Satellite 15... The Final Frontier', '8:40', 1, 7),
+    ('El Dorado', '6:49', 2, 7),
+    ('Mother of Mercy', '5:20', 3, 7),
+    ('Coming Home', '5:52', 4, 7),
+    ('The Alchemist', '4:29', 5, 7),
+    ('Isle of Avalon', '9:06', 6, 7),
+    ('Starblind', '7:48', 7, 7),
+    ('The Talisman', '9:03', 8, 7),
+    ('The Man Who Would Be King', '8:28', 9, 7),
+    ('When the Wild Wind Blows', '10:59', 10, 7);
