@@ -4,11 +4,17 @@
 -- not part of any order in the result.
 
 -- ESIMERKKI INSERT INTO `products` (`supplier_ids`, `id`, `product_code`, `product_name`, `description`, `standard_cost`, `list_price`, `reorder_level`, `target_level`, `quantity_per_unit`, `discontinued`, `minimum_reorder_quantity`, `category`, `attachments`) VALUES ('4', 1, 'NWTB-1', 'Northwind Traders Chai', NULL, 13.5, 18, 10, 40, '10 boxes x 20 bags', 0, 10, 'Beverages', '');
--- ESIMERKKI  INSERT INTO `orders` (`id`, `employee_id`, `customer_id`, `order_date`, `shipped_date`, `shipper_id`, `ship_name`, `ship_address`, `ship_city`, `ship_state_province`, `ship_zip_postal_code`, `ship_country_region`, `shipping_fee`, `taxes`, `payment_type`, `paid_date`, `notes`, `tax_rate`, `tax_status_id`, `status_id`) VALUES (30, 9, 27, '2006-01-15 00:00:00', '2006-01-22 00:00:00', 2, 'Karen Toh', '789 27th Street', 'Las Vegas', 'NV', '99999', 'USA', 200, 0, 'Check', '2006-01-15 00:00:00', NULL, 0, NULL, 3);
+-- ESIMERKKI INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `quantity`, `unit_price`, `discount`, `status_id`, `date_allocated`, `purchase_order_id`, `inventory_id`) VALUES (27, 30, 34, 100, 14, 0, 2, NULL, 96, 83);
 
 
 SELECT
-    products.product_name AS product_name
-    COUNT(products.product_name) AS number_of_orders
-
+    products.product_name AS product_name,
+    COUNT(order_details.order_id) AS number_of_orders
+FROM
+    products
+LEFT JOIN
+    order_details ON products.id = order_details.product_id
 GROUP BY
+    products.product_name
+ORDER BY
+    number_of_orders DESC;
