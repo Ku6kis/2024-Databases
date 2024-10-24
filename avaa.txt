@@ -1,0 +1,1 @@
+"C:\Program Files\MariaDB 11.5\bin\mysql.exe" -u root -p

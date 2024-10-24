@@ -1,2 +1,12 @@
-Try to delete employees Steven Thorpe and Nancy Freehafer from the database.
-Does the delete operation succeed or not and why?
+--Try to delete employees Steven Thorpe and Nancy Freehafer from the database.
+--Does the delete operation succeed or not and why?
+
+-- ESIMERKKI  INSERT INTO `employees` (`id`, `company`, `last_name`, `first_name`, `email_address`, `job_title`, `business_phone`, `home_phone`, `mobile_phone`, `fax_number`, `address`, `city`, `state_province`, `zip_postal_code`, `country_region`, `web_page`, `notes`, `attachments`) VALUES (1, 'Northwind Traders', 'Freehafer', 'Nancy', 'nancy@northwindtraders.com', 'Sales Representative', '(123)555-0100', '(123)555-0102', NULL, '(123)555-0103', '123 1st Avenue', 'Seattle', 'WA', '99999', 'USA', '#http://northwindtraders.com#', NULL, '');
+
+
+DELETE FROM employees WHERE first_name = 'Steven' AND last_name = 'Thorpe';
+DELETE FROM employees WHERE first_name = 'Nancy' AND last_name = 'Freehafer';
+
+
+-- Pelkästään näillä komennoilla näiden työntekijöiden poistaminen on mahdotonta, sillä työntekijät liittyvät myös-
+-- toisiin tauluihin (foreign key). ON DELETE NO ACTION estää tällaisten sarakkeiden poistamisen taulukosta.
